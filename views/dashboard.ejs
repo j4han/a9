@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Authenticated</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="dashboard-card">
+        <span class="badge">Validation Successful</span>
+        <h1>Welcome, <%= user.fullName || user.email %>!</h1>
+        <p style="color: #64748b; margin-bottom: 16px;">You have successfully authenticated using MongoDB.</p>
+
+        <div class="user-info">
+            <p><strong>Database Record ID:</strong> <%= user._id %></p>
+            <p><strong>Email:</strong> <%= user.email %></p>
+            <p><strong>Role:</strong> <%= user.role || 'User' %></p>
+        </div>
+
+        <a href="/logout" class="btn-logout">Log Out</a>
+    </div>
+</body>
+</html>
